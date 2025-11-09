@@ -1,12 +1,8 @@
 <?php
-
-
 class LogoutClass {
-
-
     protected function logUserOut() {
         session_start();
-unset($_SESSION['tenNguoiDungadmin']);
+unset($_SESSION['tennguoidungadmin']);
 unset($_SESSION['tenDangNhapadmin']);
 unset($_SESSION['emailadmin']);
 unset($_SESSION['passwordadmin']);
