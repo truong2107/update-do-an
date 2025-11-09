@@ -4,14 +4,14 @@ class ProductClass extends DataBaseClass{
 
     protected function getAllProducts(){
         $conn = $this->connect();
-        $sql = "SELECT * FROM sanpham ORDER BY MaSP DESC";
+        $sql = "SELECT * FROM sanpham WHERE TrangThai=1 ORDER BY MaSP DESC";
         return $conn->query($sql);
     }
 
     public function getProductsByPage($keyword, $maLoaiSP, $minPrice, $maxPrice, $limit, $offset) {
         $conn = $this->connect();
 
-        $sql = "SELECT * FROM sanpham WHERE DonGia BETWEEN $minPrice AND $maxPrice";
+        $sql = "SELECT * FROM sanpham WHERE TrangThai=1 AND DonGia BETWEEN $minPrice AND $maxPrice";
 
         if (!empty($keyword)) {
             $keyword = $conn->real_escape_string($keyword);
@@ -37,7 +37,7 @@ class ProductClass extends DataBaseClass{
 
     public function countProducts($keyword, $maLoaiSP, $minPrice, $maxPrice) {
         $conn = $this->connect();
-        $sql = "SELECT COUNT(*) AS total FROM sanpham WHERE DonGia BETWEEN $minPrice AND $maxPrice";
+        $sql = "SELECT COUNT(*) AS total FROM sanpham WHERE TrangThai=1 AND DonGia BETWEEN $minPrice AND $maxPrice";
 
         if (!empty($keyword)) {
             $keyword = $conn->real_escape_string($keyword);
