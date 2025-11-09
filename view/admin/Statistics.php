@@ -8,7 +8,7 @@ if (!isset($_SESSION['tennguoidungadmin'])) {
 
 if (!isset($_GET['from']) || !isset($_GET['to']) || empty($_GET['from']) || empty($_GET['to'])) {
 
-    header("location: chonngay.php");
+    header("location: selectDay.php");
     exit();
 }
 $from = $_GET['from'];
@@ -101,7 +101,7 @@ $reportData = $statistics->showTopCustomersReport($from, $to);
             <?php
             } 
             ?>
-            <div class="back"><a href="chonngay.php"><button>Quay lại</button></a></div>
+            <div class="back"><a href="selectDay.php"><button>Quay lại</button></a></div>
         </div>
     </div>
     <style>

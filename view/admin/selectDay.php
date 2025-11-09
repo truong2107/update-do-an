@@ -15,6 +15,7 @@ if(!isset($_SESSION['tennguoidungadmin'])){
      <link href="../img/DMTD-Food-Logo.jpg" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
        <link rel="stylesheet" href="css/accountManage.css">
+       <link rel="stylesheet" href="css/selectDay.css">
 </head>
 <body>
     <div class="classQuanLy">
@@ -62,17 +63,6 @@ if(!isset($_SESSION['tennguoidungadmin'])){
         </div>
     </div>
 
-    <style>
-        .form_date { display: flex; justify-content: center; align-items: start; margin-top: 50px; }
-        .date_con { width: 50%; padding: 20px; display: flex; flex-direction: column; align-items: center; background-color: #e9e9e9; border: 1px solid; }
-        .date_con form { display: flex; flex-direction: column; align-items: center; gap: 15px; height: 80%; }
-        .in { display: flex; align-items: center; gap: 10px; width: 100%; height: 20%; }
-        .in p { white-space: nowrap; }
-        label { width: auto; text-align: right; }
-        input[type="date"] { width: 150px; height: 35px; padding: 5px; }
-        .btn { padding:10px 30px; font-size:larger; cursor: pointer; border: 1px solid #ccc; }
-        .btn:hover { background-color: orange; color: white; }
-    </style>
     <script>
         const menu = document.querySelector(".menu");
         const menuToggle = document.querySelector(".menu-toggle i");
