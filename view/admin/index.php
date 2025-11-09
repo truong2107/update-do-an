@@ -80,17 +80,79 @@ if (isset($_GET['error'])) {
             if (!modalDemo.contains(e.target)) btnClose.click();
         });
 
-        if (!document.getElementById("modal-style")) {
-            const style = document.createElement("style");
-            style.id = "modal-style";
-            style.textContent = `
-            #modal-container { height: 100vh; background-color: rgb(0,0,0,0.5); position: fixed; top: 0; left: 0; width: 100%; opacity: 0; pointer-events: none; z-index: 1000; }
-            #modal-container.show { opacity: 1; pointer-events: all; }
-            .modal { background-color: #fff; max-width: 500px; position: relative; left: 50%; top: 100px; transform: translateX(-50%); }
-            /* ... các style khác cho modal ... */
-            `;
-            document.head.appendChild(style);
-        }
+   if (!document.getElementById("modal-style")) {
+    const style = document.createElement("style");
+    style.id = "modal-style";
+    style.textContent = `
+      * { box-sizing: border-box; }
+      body { font-family: Arial, Helvetica, sans-serif; line-height: 1.3; }
+
+      #modal-container {
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1000;
+      }
+      #modal-container.show { opacity: 1; pointer-events: all; }
+
+      .modal {
+        background-color: #fff;
+        max-width: 500px;
+        position: relative;
+        left: 50%; top: 100px;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+
+      .modal .modal_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        border-bottom: 1px solid gray;
+      }
+
+      .modal_header h3 {
+        margin: 0;
+        text-align: center;
+        flex-grow: 1;
+      }
+
+      button#btn-close {
+        width: 30px; height: 30px;
+        border: none;
+        font-size: 20px;
+        color: white;
+        background-color: #f37319;
+        border-radius: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: -5px; right: -5px;
+      }
+
+      .modal .modal_body { padding: 10px 20px 15px; }
+
+      .modal_body p { text-align: center; }
+
+      .modal_body a {
+        text-decoration: none;
+        background: #f37319;
+        color: #fff;
+        display: block;
+        padding: 5px 15px;
+        text-align: center;
+        margin: 10px auto;
+        width: fit-content;
+        border-radius: 10px;
+      }
+    `;
+    document.head.appendChild(style);
+  }
     }
 </script>
 
