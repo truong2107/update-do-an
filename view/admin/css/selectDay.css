@@ -1,134 +1,51 @@
-/* --- CÀI ĐẶT CHUNG (Giả lập) --- */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  background-color: #f0f2f5;
-  padding: 15px; /* Thêm padding cho body */
-  box-sizing: border-box;
-}
-
-/* --- CONTAINER CHÍNH --- */
 .form_date {
   display: flex;
   justify-content: center;
   align-items: start;
-  margin-top: 20px; /* Giảm margin cho mobile */
+  margin-top: 50px;
 }
-
-/* --- MẶC ĐỊNH (MOBILE-FIRST) --- */
 .date_con {
-  /* Trên mobile, chiếm 100% chiều rộng */
-  width: 100%;
-  /* Đặt chiều rộng tối đa để không quá lớn trên tablet */
-  max-width: 600px;
-
+  width: 50%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #e9e9e9;
   border: 1px solid;
-  box-sizing: border-box; /* Thêm để padding không vỡ layout */
-  border-radius: 8px; /* Thêm 1 chút bo góc */
 }
-
 .date_con form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Nút sẽ được căn giữa */
-  gap: 20px; /* Tăng khoảng cách */
-  width: 100%; /* Form chiếm 100% .date_con */
+  align-items: center;
+  gap: 15px;
+  height: 80%;
 }
-
 .in {
   display: flex;
-  /* Trên mobile, xếp chồng các mục lên nhau */
-  flex-direction: column;
-  align-items: flex-start; /* Căn lề trái cho đẹp */
+  align-items: center;
   gap: 10px;
   width: 100%;
+  height: 20%;
 }
-
 .in p {
   white-space: nowrap;
-  margin: 0 0 5px 0; /* Xóa margin, thêm chút đệm dưới */
-  font-weight: 600;
-  font-size: 1.1rem;
 }
-
 label {
   width: auto;
-  text-align: left; /* Căn trái trên mobile */
-  font-weight: 500;
+  text-align: right;
 }
-
 input[type="date"] {
-  /* Cho input chiếm 100% chiều rộng trên mobile */
-  width: 100%;
-  height: 40px; /* Tăng chiều cao cho dễ bấm */
-  padding: 5px 8px;
-  box-sizing: border-box; /* Quan trọng! */
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 150px;
+  height: 35px;
+  padding: 5px;
 }
-
 .btn {
-  padding: 12px 30px; /* Tăng padding */
-  font-size: 1rem; /* Kích thước font nhất quán */
-  font-weight: bold;
+  padding: 10px 30px;
+  font-size: larger;
   cursor: pointer;
   border: 1px solid #ccc;
-  width: 100%; /* Nút chiếm 100% trên mobile */
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
 }
-
 .btn:hover {
   background-color: orange;
   color: white;
-}
-
-/* --- RESPONSIVE CHO MÀN HÌNH LỚN --- */
-/* Áp dụng khi màn hình rộng từ 600px trở lên (Desktop/Tablet) */
-@media (min-width: 600px) {
-  .form_date {
-    margin-top: 50px; /* Trả lại margin gốc */
-  }
-
-  .date_con {
-    /* Giờ ta áp dụng width 50% như của bạn */
-    width: 50%;
-    min-width: 500px; /* Đảm bảo không quá hẹp */
-  }
-
-  .in {
-    /* * Cho phép các mục nằm ngang VÀ tự động xuống hàng
-         * nếu không đủ chỗ (rất quan trọng)
-        */
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .in p {
-    /* Cho tiêu đề <p> chiếm 100% hàng đầu tiên */
-    width: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  label {
-    text-align: right; /* Trả lại căn lề phải */
-  }
-
-  input[type="date"] {
-    /* Trả lại chiều rộng 150px cố định */
-    width: 150px;
-  }
-
-  .btn {
-    /* Cho nút co lại, không chiếm 100% nữa */
-    width: auto;
-  }
 }
