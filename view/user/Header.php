@@ -121,7 +121,7 @@ $max_price = isset($max_price) ? $max_price : 500000;
 
   <nav>
     <ul>
-  <li><a href="/web/index.php">Trang chủ</a></li>
+  <li><a href="/web/index.php?act=home">Trang chủ</a></li>
   <li><a href="/web/index.php?MaLoaiSP=1">Món mặn</a></li>
   <li><a href="/web/index.php?MaLoaiSP=2">Món chay</a></li>
   <li><a href="/web/index.php?MaLoaiSP=3">Món lẩu</a></li>
