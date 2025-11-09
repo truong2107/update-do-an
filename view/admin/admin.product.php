@@ -63,7 +63,7 @@ if(!isset($_SESSION['tennguoidungadmin'])){
         </div>
         <a href="index.html" style="color: inherit">
           <div class="out1">
-          <a href="dangxuat.php"> <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+          <a href="/web/inc/admin/LogoutInc.php"> <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
           </div>
         </a>
       </div>
