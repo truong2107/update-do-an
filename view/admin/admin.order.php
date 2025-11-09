@@ -14,7 +14,7 @@ $wards = (!empty($district) && $district != 'all') ? $orderContr->getWards($dist
 
 $orders = $orderContr->filterOrders($status, $district, $ward, $startDate, $endDate);
 
-if(!isset($_SESSION['tennguoidung'])){
+if(!isset($_SESSION['tennguoidungadmin'])){
   header("location: index.php");
 }
 
@@ -57,7 +57,7 @@ if(!isset($_SESSION['tennguoidung'])){
               src="../img/DMTD-Food-Logo.jpg"
               alt=""
             />
-            <h4 style="white-space: unset"><?php echo $_SESSION['tennguoidung'];?></h4>
+            <h4 style="white-space: unset"><?php echo $_SESSION['tennguoidungadmin'];?></h4>
             Chào mừng bạn trở lại
           </div>
         </div>

@@ -38,7 +38,7 @@ class AdminSignInClass extends DatabaseClass {
 
 
             session_start();
-            $_SESSION['tennguoidung'] = $row['tenNguoiDung'];
+            $_SESSION['tennguoidungadmin'] = $row['tenNguoiDung'];
             $_SESSION['tenDangNhapadmin'] = $row['tenDangNhap'];
             $_SESSION['emailadmin'] = $row['email'];
             $_SESSION['passwordadmin'] = $row['password'];
