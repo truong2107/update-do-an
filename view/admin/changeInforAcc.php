@@ -18,7 +18,7 @@ $userController = new ChangeInforAccContr();
 $userData = $userController->showUser($userId);
 
 if (!$userData) {
-    header("location: accountMange.php");
+    header("location: accountManage.php");
     exit();
 }
 ?>
