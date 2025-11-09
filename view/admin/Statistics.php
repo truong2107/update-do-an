@@ -65,7 +65,8 @@ $reportData = $statistics->showTopCustomersReport($from, $to);
             <?php
             } else {
             ?>
-                <table>
+<div class="xephang">
+                    <table>
                     <tr>
                         <th>Xếp hạng</th>
                         <th>ID người dùng</th>
@@ -98,10 +99,12 @@ $reportData = $statistics->showTopCustomersReport($from, $to);
                     } 
                     ?>
                 </table>
+                            <div class="back"><a href="selectDay.php"><button>Quay lại</button></a></div>
+</div>
             <?php
             } 
             ?>
-            <div class="back"><a href="selectDay.php"><button>Quay lại</button></a></div>
+
         </div>
     </div>
     <style>

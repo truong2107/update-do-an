@@ -1,3 +1,8 @@
+.ThongKe {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
 .bang {
   text-align: center;
   padding: 15px;
@@ -9,6 +14,12 @@
   height: 50px;
   background: #f7f7f7;
   margin-bottom: 20px;
+}
+.xephang {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .ThongKe table {
   width: 100%;
@@ -92,4 +103,28 @@ td a {
 .thongbao {
   display: flex;
   justify-content: center;
+}
+@media (max-width: 1256px) {
+  .bang {
+    font-size: larger;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  h1 {
+    font-size: small;
+  }
+}
+@media (max-width: 800px) {
+  .ThongKe {
+    align-items: center;
+  }
+  .bang {
+    width: 100vw;
+  }
+  table {
+    width: 100vw;
+  }
 }
