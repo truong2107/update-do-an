@@ -43,7 +43,7 @@ class SignInClass extends DatabaseClass {
 
             // Chuyển hướng tùy vai trò
             if ($row['vaiTro'] === 'admin') {
-                header("Location: /web/view/admin/accountManage.php");
+                header("Location: /web/view/admin/index.php");
             } else {
                 header("Location: /web/index.php");
             }
