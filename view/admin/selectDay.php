@@ -12,7 +12,7 @@ if(!isset($_SESSION['tennguoidung'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DMTD FOOD - Thống kê</title>
     
-    <link href="../img/DMTD-Food-Logo.jpg" rel="shortcut icon" type="image/x-icon"/>
+     <link href="../img/DMTD-Food-Logo.jpg" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
        <link rel="stylesheet" href="css/accountManage.css">
 </head>

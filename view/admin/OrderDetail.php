@@ -32,7 +32,7 @@ $orders = $data['orders'];
 <head>
     <meta charset="UTF-8">
     <title>Lịch sử mua hàng của <?php echo htmlspecialchars($customer['tenNguoiDung']); ?></title>
-    <link href="../../img/DMTD-Food-Logo.jpg" rel="shortcut icon" type="image/x-icon"/>
+     <link href="../img/DMTD-Food-Logo.jpg" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="css/OrderDetail.css">
 </head>
 <body>
