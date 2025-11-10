@@ -2,14 +2,6 @@
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . "/web/controller/user/BillContr.php";
 
-if(isset($_SESSION['tenDangNhap'])){
-$tenNguoiDung = $_SESSION['tenNguoiDung'];
-$sdt = $_SESSION['sdt'];
-$diaChi = $_SESSION['diaChi'];
-$quan_huyen = $_SESSION['quan_huyen'];
-$phuong_xa = $_SESSION['phuong_xa'];
-}
-
 $maHoaDon = isset($_GET['mahoadon']) ? $_GET['mahoadon'] : 0;
 
 if($maHoaDon <= 0) {
@@ -24,6 +16,11 @@ if(!$summary) {
     echo "Không tìm thấy thông tin đơn hàng!";
     exit();
 }
+$tenNguoiDung = $summary['HoTen'];
+$sdt = $summary['sdt'];
+$diaChi = $summary['DiaChi'];
+$quan_huyen = $summary['quan_huyen'];
+$phuong_xa = $summary['phuong_xa'];
 $pttt = $summary['PhuongThucTT'];
 $trangThai = $summary['TrangThai'];
 $tongTien = $summary['TongTien'];
