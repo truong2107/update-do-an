@@ -58,6 +58,15 @@ class CartContr extends CartClass{
         return $total;                
     }
 
-
+    public function updateQuantity($maSP, $quantity) {
+        if ($quantity > 0 && $quantity <= 100) {
+            if (isset($_SESSION['giohang'][$maSP])) {
+                $_SESSION['giohang'][$maSP]['soluong'] = $quantity;
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }
 ?>

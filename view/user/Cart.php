@@ -5,6 +5,22 @@ $cart = new CartContr();
 //giỏ hàng đã được lọc trạng thái(món ăn)
 $item = $cart->getCleanCartItems();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["update_quantity"])) {
+    $maSP = $_POST["product_id"];
+    $quantity = (int)$_POST["quantity"];
+    
+    $result = $cart->updateQuantity($maSP, $quantity);
+    
+    if (isset($_POST["ajax"])) {
+        header('Content-Type: application/json');
+        echo json_encode([
+            'success' => $result,
+            'corrected_quantity' => $quantity
+        ]);
+        exit;
+    }
+}
+
 // xử lý việc xóa giỏ hàng
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['remove_item']) && isset($_POST['remove_id'])) {
