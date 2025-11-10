@@ -37,7 +37,7 @@ include "../../inc/admin/order-detail.php";
         <div class="logo">
           <div>
             <img src="../img/DMTD-Food-Logo.jpg" alt=""/>
-            <h4 style="white-space: unset"><?php echo $_SESSION['tennguoidung'];?></h4>
+            <h4 style="white-space: unset"><?php echo $_SESSION['tennguoidungadmin'];?></h4>
             Chào mừng bạn trở lại
           </div>
         </div>
