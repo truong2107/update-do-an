@@ -57,10 +57,11 @@ class BillClass extends DataBaseCLass{
             return $details;
     }
 
+
     protected function getBillSummary($maHoaDon) {
         $conn = $this->connect();
         
-        $sql = "SELECT PhuongThucTT, TrangThai, TongTien, NgayDatHang 
+        $sql = "SELECT * 
                 FROM hoadon 
                 WHERE IdHoaDon = $maHoaDon";
         
