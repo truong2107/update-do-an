@@ -20,15 +20,19 @@ if($isLoggedIn){
         $diaChi = $_SESSION['diaChi'];
         $quan_huyen = $_SESSION['quan_huyen'];
         $phuong_xa = $_SESSION['phuong_xa'];
-
-        $checkStatus = new SignInContr($tenDangNhap,$email);
-        $trangThai = $checkStatus->kiemTraQuyenTruyCap();
-
-        if($trangThai == 2){
-            header("Location:/web/view/user/LogOut.php");
-            exit();
-        }
     }
+}
+
+$trangThai = null;
+if(isset($email)){
+     $checkStatus = new SignInContr($tenDangNhap,$email);
+    $trangThai = $checkStatus->kiemTraQuyenTruyCap();  
+
+}
+
+if($isLoggedIn && $trangThai == 2){
+    header("Location:/web/view/user/LogOut.php");
+    exit();
 }
 
 $productController = new ProductContr();
