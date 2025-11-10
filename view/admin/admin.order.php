@@ -131,7 +131,7 @@ if(!isset($_SESSION['tennguoidungadmin'])){
                     <option value = "1" <?= ($status == '1') ? 'selected' : '' ?>>Chưa xác nhận</option>
                     <option value="2" <?= ($status == '2') ? 'selected' : '' ?>>Đã xác nhận</option>
                     <option value="3"<?= ($status == '3') ? 'selected' : '' ?>>Giao thành công</option>
-                    <option value="4" <?= ($status == '4') ? 'selected' : '' ?>>Hủy đơn</option>
+                    <option value="4" <?= ($status == '4') ? 'selected' : '' ?>>Đã huỷ</option>
                   </select>
                 </div>
 
