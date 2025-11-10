@@ -36,11 +36,9 @@ class CartClass extends DataBaseClass{
         if($result && $result->num_rows >0){
            $row =  $result->fetch_assoc();
            $trangThai = (int)$row['TrangThai'];
-        }else{
-            die("Lỗi SQL " . $conn->error);
+           return $trangThai;
         }
-
-        return $trangThai;
+         return null;
 
 
     }

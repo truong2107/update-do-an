@@ -38,7 +38,7 @@ class CartContr extends CartClass{
 
         $status = $this->getStatusProduct($maSP); 
 
-        if ($status !== 0) {
+        if ($status == 1 ) {
             // sản phẩm không bị ẩn => lưu vào giỏ hàng
             $cleanCart[$maSP] = $product;
         }
