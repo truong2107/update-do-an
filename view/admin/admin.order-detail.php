@@ -56,9 +56,9 @@ include "../../inc/admin/order-detail.php";
         <div class="menu-toggle">
           <i class="fa-solid fa-bars"></i>
         </div>
-        <a href="/web/inc/admin/LogoutInc.php" style="color: inherit">
+        <a href="index.html" style="color: inherit">
           <div class="out1">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <a href="/web/inc/admin/LogoutInc.php"> <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
           </div>
         </a>
       </div>
