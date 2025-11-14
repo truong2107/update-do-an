@@ -144,7 +144,8 @@ if(!isset($_SESSION['tennguoidungadmin'])){
             <?php 
                 if (empty($orders)) {
                   echo '<div style="text-align:center; margin-top:20px;">
-                          <h1>Không tồn tại đơn hàng nào</h1>
+                  <hr>
+                          <h3>Không tồn tại đơn hàng nào</h3>
                         </div>';
                 }
                 else{
