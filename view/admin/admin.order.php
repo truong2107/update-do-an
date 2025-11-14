@@ -86,13 +86,6 @@ if(!isset($_SESSION['tennguoidungadmin'])){
       <!-- Content -->
       <div class="content">
         <main>
-          <?php
-            $length = $orderContr->checkOrdersLength();
-
-            if ($length === 0) {
-              echo '<div style="text-align:center"><h1>Không có đơn nào</h1></div>';
-            } else {
-          ?>
           <div class="main-content">
 
             <form id="formFilter" action="" method="GET">
@@ -148,69 +141,77 @@ if(!isset($_SESSION['tennguoidungadmin'])){
               </div>
             </form> 
             
-            <div class="list-order">
-              <table>
-                <thead>
-                  <tr>
-                    <td>MÃ ĐƠN</td>
-                    <td>KHÁCH HÀNG</td>
-                    <td>NGÀY ĐẶT</td>
-                    <td>ĐỊA CHỈ</td>
-                    <td>TỔNG TIỀN</td>
-                    <td>TRẠNG THÁI</td>
-                    <td>THAO TÁC</td>
-                  </tr>
-                </thead>
+            <?php 
+                if (empty($orders)) {
+                  echo '<div style="text-align:center; margin-top:20px;">
+                          <h1>Không tồn tại đơn hàng nào</h1>
+                        </div>';
+                }
+                else{
+              ?>
+              <div class="list-order">
+                <table>
+                  <thead>
+                    <tr>
+                      <td>MÃ ĐƠN</td>
+                      <td>KHÁCH HÀNG</td>
+                      <td>NGÀY ĐẶT</td>
+                      <td>ĐỊA CHỈ</td>
+                      <td>TỔNG TIỀN</td>
+                      <td>TRẠNG THÁI</td>
+                      <td>THAO TÁC</td>
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  <?php 
-                    foreach ($orders as $row){
-                  ?>
-                  <tr>
-                    <td><?php echo $row['IdHoaDon'] ?></td>
-                    <td><?php echo $row['HoTen']?></td>
-                    <td><?php 
-                      $datetime = new DateTime($row['NgayDatHang']); 
-                      $formatted_date = $datetime->format('d/m/Y'); 
-                      echo $formatted_date;
-                    ?></td>
-                    <td><?php echo $row["DiaChi"] . ", " . $row["phuong_xa"] . ", " . $row["quan_huyen"] ?></td>
-                    <td><?php echo number_format($row['TongTien'], 0, ',', '.') . 'đ'; ?></td>
-                    <td>
-                      <?php 
-                        switch($row['TrangThai']){
-                          case 1:
-                            echo '<span class="status-btn pending">Chưa xác nhận</span>';
-                            break;
-                          case 2:
-                            echo '<span class="status-btn confirm">Đã xác nhận</span>';
-                            break;
-                          case 3:
-                            echo '<span class="status-btn success">Giao thành công</span>';
-                            break;
-                          case 4:
-                            echo '<span class="status-btn cancel">Hủy đơn</span>';
-                            break;
-                        }
-                      ?>
-                    </td>
-                    <td class="control">
-                      <button>
-                        <a
-                          href="./admin.order-detail.php?id=<?php echo $row["IdHoaDon"]?>&&status=<?php echo $row["TrangThai"]?>"
-                          style="font-size: 14px; color: black"
-                          name="button-detail"
-                          >Chi tiết</a
-                        >
-                      </button>
-                    </td>
-                  </tr>
-                  <?php } ?>
-                </tbody>
-              </table>
+                  <tbody>
+                    <?php 
+                      foreach ($orders as $row){
+                    ?>
+                    <tr>
+                      <td><?php echo $row['IdHoaDon'] ?></td>
+                      <td><?php echo $row['HoTen']?></td>
+                      <td><?php 
+                        $datetime = new DateTime($row['NgayDatHang']); 
+                        $formatted_date = $datetime->format('d/m/Y'); 
+                        echo $formatted_date;
+                      ?></td>
+                      <td><?php echo $row["DiaChi"] . ", " . $row["phuong_xa"] . ", " . $row["quan_huyen"] ?></td>
+                      <td><?php echo number_format($row['TongTien'], 0, ',', '.') . 'đ'; ?></td>
+                      <td>
+                        <?php 
+                          switch($row['TrangThai']){
+                            case 1:
+                              echo '<span class="status-btn pending">Chưa xác nhận</span>';
+                              break;
+                            case 2:
+                              echo '<span class="status-btn confirm">Đã xác nhận</span>';
+                              break;
+                            case 3:
+                              echo '<span class="status-btn success">Giao thành công</span>';
+                              break;
+                            case 4:
+                              echo '<span class="status-btn cancel">Hủy đơn</span>';
+                              break;
+                          }
+                        ?>
+                      </td>
+                      <td class="control">
+                        <button>
+                          <a
+                            href="./admin.order-detail.php?id=<?php echo $row["IdHoaDon"]?>&&status=<?php echo $row["TrangThai"]?>"
+                            style="font-size: 14px; color: black"
+                            name="button-detail"
+                            >Chi tiết</a
+                          >
+                        </button>
+                      </td>
+                    </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              <?php } ?>
             </div>
           </div>
-          <?php } ?>
         </main>
       </div>
     </div>
