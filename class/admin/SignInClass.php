@@ -52,5 +52,6 @@ class AdminSignInClass extends DatabaseClass {
             header("location: /web/view/admin/accountManage.php"); 
         }
     }
+    
 }
 ?>

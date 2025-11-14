@@ -15,5 +15,8 @@ class AdminSignInContr extends AdminSignInClass {
     public function signInAdmin() {
         $this->getAdminUser($this->tenDangNhap, $this->password);
     }
+        public function kiemTraQuyenTruyCap(){
+        return $result = $this->kiemTraTrangThaiTaiKhoan($this->tenDangNhap);
+    }
 }
 ?>

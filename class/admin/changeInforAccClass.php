@@ -39,11 +39,22 @@ class changeInforAccClass extends DatabaseClass {
         $stmtCheck->bind_param("si", $email, $id);
         $stmtCheck->execute();
         $stmtCheck->store_result();
-
         if ($stmtCheck->num_rows > 0) {
 
             $stmtCheck->close();
             header("Location: /web/view/admin/changeInforAcc.php?this_id=" . $id . "&error=emailtaken");
+            exit();
+        }
+        $stmtCheck->close();
+                $sqlCheck2 = "SELECT id_nguoidung FROM nguoidung WHERE tenDangNhap = ? AND id_nguoidung != ?";
+        $stmtCheckdn = $conn->prepare($sqlCheck2);
+        $stmtCheckdn->bind_param("si", $tenDangNhap, $id);
+        $stmtCheckdn->execute();
+        $stmtCheckdn->store_result();
+                 if ($stmtCheckdn->num_rows > 0) {
+
+            $stmtCheckdn->close();
+            header("Location: /web/view/admin/changeInforAcc.php?this_id=" . $id . "&error=usernametaken");
             exit();
         }
         $stmtCheck->close();

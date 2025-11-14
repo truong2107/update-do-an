@@ -100,6 +100,11 @@ window.onload = function () {
                  <i class="fa fa-user icon"></i>
                  <input class="input-field" type="text" placeholder="Tên đăng nhập" name="tenDangNhap" value="<?php echo htmlspecialchars($userData['tenDangNhap']); ?>" required>
              </div>
+                    <?php 
+            if (isset($_GET['error']) && $_GET['error'] == 'usernametaken') {
+                echo '<span class="error-message" style="display:block;">Tên đăng nhập này đã được sử dụng bởi tài khoản khác.</span>';
+            }
+            ?>
         </div>
 
         <div class="input-container">
