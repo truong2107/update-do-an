@@ -12,6 +12,7 @@ if($isLoggedIn){
         session_destroy();
         header("location: /web/view/admin/index.php");
     }else{
+        $id = $_SESSION['id'];        
         $tenNguoiDung = $_SESSION['tenNguoiDung'];
         $tenDangNhap = $_SESSION['tenDangNhap']; 
         $email = $_SESSION['email']; 
@@ -88,7 +89,7 @@ if(isset($_GET['act'])){
 
         case "viewInfo":
             require_once $_SERVER['DOCUMENT_ROOT'] . "/web/view/user/Info.php";
-            break;            
+            break;              
     }
 }else{
     require_once $_SERVER['DOCUMENT_ROOT'] . "/web/view/user/Home.php";
